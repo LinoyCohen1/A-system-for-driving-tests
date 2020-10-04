@@ -1,0 +1,51 @@
+﻿<Window x:Class="PLWPF.showTesters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="showTesters" Height="525" Width="1247">
+    <Window.Background>
+        <ImageBrush ImageSource="IMAGE/testLogo.png" Opacity="0.3"/>
+    </Window.Background>
+
+    <Grid Margin="0,64,127,124">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="194*"/>
+            <ColumnDefinition Width="462*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="dataGridTesters"  VerticalAlignment="Top" Height="296" Margin="0,10,-90,0" AutoGenerateColumns="False" IsReadOnly="True" FontFamily="Tahoma" FontSize="17" MouseDoubleClick="dataGridTesters_MouseDoubleClick" Grid.ColumnSpan="4" RenderTransformOrigin="0.615,0.553" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding TesterId}"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding TesterFirstName}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding TesterLastName}"/>
+                <DataGridTextColumn Header="Tester's Birth" Binding="{Binding TesterBirthDate}"/>
+                <DataGridTextColumn Header="Street" Binding="{Binding TesterStreet}"/>
+                <DataGridTextColumn Header="City" Binding="{Binding TesterCity}"/>
+                <DataGridTextColumn Header="NumBuilding" Binding="{Binding TesterNumBuilding}"/>
+                <DataGridTextColumn Header="TesterGender" Binding="{Binding TesterGender}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding TesterPhone}"/>
+                <DataGridTextColumn Header="Experience" Binding="{Binding TesterExperience}"/>
+                <DataGridTextColumn Header="MaxTests" Binding="{Binding TesterMaxTests}"/>
+                <DataGridTextColumn Header="TesterkindOfVehicle" Binding="{Binding TesterCar}"/>
+                <DataGridTextColumn Header="MaxDis" Binding="{Binding TesterMaxDistance}"/>
+                <DataGridTextColumn Header="TesterGearBox" Binding="{Binding TesterGearBox}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="txtShowTester" Foreground="#FFFAF5F5" HorizontalAlignment="Left" Height="55" FontFamily="Gill Sans Ultra Bold Condensed"  VerticalAlignment="Top" Width="203" FontSize="40" Margin="23,-45,0,0" Grid.Column="1" Grid.ColumnSpan="2">
+            <Run Text="Testers"/>
+        </Label>
+        <Button x:Name="return" Grid.Row="0" VerticalAlignment="Bottom"  Height="44" FontSize="24" FontFamily="Gill Sans Ultra Bold Condensed" Foreground="#FF02090F"  Margin="23,0,294,-111" Click="Return_Click" Grid.Column="1" Grid.ColumnSpan="2"   >
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/prevWindows.jpg"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
+
+ 

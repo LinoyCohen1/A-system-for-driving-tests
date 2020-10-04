@@ -1,0 +1,57 @@
+﻿<Window x:Class="PLWPF.showTrainees"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="showTrainees" Height="450" Width="1200">
+    <Window.Background>
+        <ImageBrush ImageSource="IMAGE/testLogo.png" Opacity="0.3"/>
+    </Window.Background>
+
+    <Grid Height="276"  VerticalAlignment="Bottom" Margin="50,0,2,91">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="288*"/>
+            <RowDefinition Height="17*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="473*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <DataGrid x:Name="dataGridTrainees" Margin="-32,22,29,-12" AutoGenerateColumns="False" IsReadOnly="True" FontFamily="Tahoma" FontSize="17" MouseDoubleClick="dataGridTrainees_MouseDoubleClick" RenderTransformOrigin="1.153,0.347" Grid.ColumnSpan="5" Grid.RowSpan="2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding TraineeId}"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding TraineeFirstName}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding TraineeLastName}"/>
+                <DataGridTextColumn Header="Tester's Birth" Binding="{Binding TraineeBirthDate}"/>
+                <DataGridTextColumn Header="Street" Binding="{Binding streetTrainee}"/>
+                <DataGridTextColumn Header="City" Binding="{Binding cityTrainee}"/>
+                <DataGridTextColumn Header="numOfBuilding" Binding="{Binding numBuildingTrainee}"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding TraineeGender}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding TraineePhone}"/>
+                <DataGridTextColumn Header="teacher" Binding="{Binding TraineeTesterName}"/>
+                <DataGridTextColumn Header="school" Binding="{Binding TraineeSchool}"/>
+                <DataGridTextColumn Header="numOfLessons" Binding="{Binding TraineeNumLessons}"/>
+                <DataGridTextColumn Header="kindOfVehicle" Binding="{Binding TraineeCar}"/>
+                <DataGridTextColumn Header="GearBox" Binding="{Binding TraineeGearBox}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="txtShowTrainee" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="228" FontSize="40" FontFamily="Gill Sans Ultra Bold Condensed" Grid.ColumnSpan="4" Margin="35,-35,0,0">
+            <Run Foreground="#FFFAF5F5" Text="Trainees"/>
+        </Label>
+        <Button x:Name="return" Grid.Row="1" VerticalAlignment="Bottom"  Height="44" FontSize="24" FontFamily="Gill Sans Ultra Bold Condensed" Foreground="#FF02090F"  Margin="-20,0,18,-78" Click="Return_Click" RenderTransformOrigin="-0.541,1.492" Grid.ColumnSpan="2"   >
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/prevWindows.jpg"/>
+            </Button.Background>
+        </Button>
+
+
+    </Grid>
+</Window>

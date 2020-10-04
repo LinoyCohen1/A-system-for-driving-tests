@@ -1,0 +1,92 @@
+﻿<Window x:Class="PLWPF.BasicTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="Test" Height="664" Width="1100">
+    <Window.Background>
+        <ImageBrush ImageSource="IMAGE/testLogo.png" Opacity="0.3"/>
+    </Window.Background>
+
+    <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="0,10,0,-31" VerticalAlignment="Top" Height="654" Width="1100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="190"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="182"/>
+            <ColumnDefinition Width="Auto" MinWidth="172"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="Auto" MinWidth="172"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="Auto" MinWidth="172"/>
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="45"/>
+            <RowDefinition Height="Auto" MinHeight="76"/>
+            <RowDefinition Height="Auto" MinHeight="72"/>
+            <RowDefinition Height="Auto" MinHeight="68"/>
+            <RowDefinition Height="Auto" MinHeight="62"/>
+            <RowDefinition Height="Auto" MinHeight="68"/>
+            <RowDefinition Height="Auto" MinHeight="64"/>
+            <RowDefinition Height="Auto" MinHeight="60"/>
+            <RowDefinition Height="Auto" MinHeight="367"/>
+            <RowDefinition Height="Auto" MinHeight="70"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="TestCode" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Code Test:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
+        <Label x:Name="IdOfTeacher" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Tester ID:" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="1"/>
+        <Label x:Name="IdOfTrainee" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Trainee ID:" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="2"/>
+        <Label x:Name="Date" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Date:" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="3"/>
+        <Label x:Name="Hour" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Hour:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="35" RenderTransformOrigin="1.522,2" Grid.Row="4"/>
+        <Label x:Name="City" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="City:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="5"/>
+        <Label x:Name="Street" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Street:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="6"/>
+        <Label x:Name="Building" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Building number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="7"/>
+        <Label x:Name="kindOfVehicle" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="Kind of vehicle:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="8"/>
+        <Label x:Name="Gearbox" Foreground="#FFFAF5F5" FontFamily="Tahoma" FontWeight="Bold" Content="GearBox:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="180" Height="35" Grid.Row="8"/>
+        <TextBox x:Name="textCode"  Text="{Binding NumOfTest}" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="14,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TextChanged="textCode_TextChanged"/>
+        <TextBox x:Name="textTesterID" MaxLength="9" Text="{Binding TesterIdTest}" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="14,25,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="txTtraineeID" MaxLength="9" Text="{Binding TraineeIdTest}" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="14,19,0,0" Grid.Row="2"  VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="textHour" Text="{Binding hourOfTest}" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="14,10,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TextChanged="TextHour_TextChanged"/>
+        <TextBox x:Name="textCity" Text="{Binding TestCity}" Grid.Column="2" Height="30" Margin="14,10,28,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textStreet" Text="{Binding TestStreet}" Grid.Column="2" Height="30" Margin="15,13,28,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBuilding" Text="{Binding TestNumBuilding}" Grid.Column="2" Height="30" Margin="15,10,28,0" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBuilding_TextChanged"/>
+        <ComboBox x:Name="cmbkindOfvehicle" Text="{Binding testCar}" Grid.Column="2" HorizontalAlignment="Left" Margin="18,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="136" Height="22"/>
+        <ComboBox x:Name="cmbgearBox" Text="{Binding testCarGearBox}" Grid.Column="2" HorizontalAlignment="Left" Margin="18,55,0,0" Grid.Row="8" VerticalAlignment="Top" Width="136" Height="22" />
+        <Label x:Name="lblmarkofTest" Foreground="#FFFAF5F5" Content="Test result:" FontFamily="Tahoma" FontWeight="Bold" Grid.Column="3" HorizontalAlignment="Left" Margin="37,0,0,0" VerticalAlignment="Top" Height="43" Width="295" Grid.ColumnSpan="3"/>
+        <Label x:Name="lblkeepdis" Foreground="#FFFAF5F5" Content="Keep distance:" FontFamily="Tahoma" FontWeight="Bold" Grid.Column="3" Margin="37,18,1,0" Grid.Row="1" VerticalAlignment="Top" Height="48"/>
+        <Label x:Name="lblreverse" Foreground="#FFFAF5F5" Content="Reverse Parking:"  FontFamily="Tahoma" FontWeight="Bold" Grid.Column="3" HorizontalAlignment="Left" Margin="37,10,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.923" Height="39" Width="135"/>
+        <Label x:Name="lblparallel" Foreground="#FFFAF5F5" Content="Parallel Parking:"  FontFamily="Tahoma" FontWeight="Bold" Grid.Column="3" HorizontalAlignment="Left" Margin="37,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="52" Width="135"/>
+        <Label x:Name="lblmirrors" Foreground="#FFFAF5F5" Content="Mirrors Looking:"  FontFamily="Tahoma" FontWeight="Bold" Grid.Column="3" HorizontalAlignment="Left" Margin="37,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="45" Width="135"/>
+        <Label x:Name="lblsignaling" Foreground="#FFFAF5F5" Content="Signaling:" Grid.Column="3"  FontFamily="Tahoma" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,10,0,0" Grid.Row="5" VerticalAlignment="Top" Height="47" Width="126"/>
+        <Label x:Name="lblfinalmark" Foreground="#FFFAF5F5" Content="Final mark:" Grid.Column="3"  FontFamily="Tahoma" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,10,0,0" Grid.Row="6" VerticalAlignment="Top" Height="49" Width="135"/>
+
+        <Label x:Name="lblrightofway" Foreground="#FFFAF5F5" Content="Give Right Of Way:" FontFamily="Tahoma" FontWeight="Bold" Grid.Column="7" Margin="0,18,0,0" Grid.Row="1" VerticalAlignment="Top" Height="48"/>
+        <Label x:Name="lblstopsign" Foreground="#FFFAF5F5" Content="Stop Sign:"  FontFamily="Tahoma" FontWeight="Bold" Grid.Column="7" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.923" Height="39" Width="135"/>
+        <Label x:Name="lblseat" Foreground="#FFFAF5F5" Content="Wear Seat Belt:"  FontFamily="Tahoma" FontWeight="Bold" Grid.Column="7" HorizontalAlignment="Left" Margin="0,6,0,0" Grid.Row="3" VerticalAlignment="Top" Height="52" Width="135"/>
+        <Label x:Name="lblights" Foreground="#FFFAF5F5" Content="lights:"  FontFamily="Tahoma" FontWeight="Bold" Grid.Column="7" HorizontalAlignment="Left" Margin="0,6,0,0" Grid.Row="4" VerticalAlignment="Top" Height="52" Width="135"/>
+        <Label x:Name="lblnote" Content="Comments:" Foreground="#FFFAF5F5" Grid.Column="3" FontFamily="Tahoma" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,22,0,0" Grid.Row="7" VerticalAlignment="Top" Height="38" Width="126"/>
+        <ComboBox x:Name="cmbKipDis" Text="{Binding keepDistance}" Grid.Column="5" HorizontalAlignment="Left" Margin="16,20,0,34" Grid.Row="1" Width="120" />
+        <ComboBox x:Name="cmbParking" Text="{Binding reverseParking}" Grid.Column="5" HorizontalAlignment="Left" Margin="16,19,0,31" Grid.Row="2" Width="120"/>
+        <ComboBox x:Name="cmbparallel" Text="{Binding parallelParking}" Grid.Column="5" HorizontalAlignment="Left" Margin="16,23,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="cmbMirror" Text="{Binding mirrorLooking}" Grid.Column="5" HorizontalAlignment="Left" Margin="16,20,0,0" Grid.Row="4" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="cmbSignaling" Text="{Binding signaling}" Grid.Column="5" HorizontalAlignment="Left" Margin="16,27,0,0" Grid.Row="5" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="cmbrightOfWay" Text="{Binding giveRightOfWay}" Grid.Column="8" HorizontalAlignment="Left" Margin="16,20,0,34" Grid.Row="1" Width="120" />
+        <ComboBox x:Name="cmbstopsign" Text="{Binding stopSign}" Grid.Column="8" HorizontalAlignment="Left" Margin="16,19,0,31" Grid.Row="2" Width="120"/>
+        <ComboBox x:Name="cmbseatbelt" Text="{Binding wearSeatBelt}" Grid.Column="8" HorizontalAlignment="Left" Margin="16,23,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="cmblights" Text="{Binding lights}" Grid.Column="8" HorizontalAlignment="Left" Margin="15.6,15.4,0,0" Grid.Row="4" VerticalAlignment="Top" Width="120" Height="22"/>
+        <TextBox x:Name="txtNote" Text="{Binding Comments}" Grid.Column="5" HorizontalAlignment="Left" Height="50" Margin="4.2,10.4,0,0" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Grid.RowSpan="2"/>
+        <Button x:Name="btnOK" Content="OK" Click="btnOK_Click"  Grid.Column="3" Margin="106,45,183,0" Grid.Row="8" VerticalAlignment="Top" Height="47" Grid.ColumnSpan="3" />
+        <DatePicker x:Name="DateTest" Grid.Column="2" SelectedDate="{Binding TestEstimatedDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Margin="14,15,0,0" Grid.Row="3" VerticalAlignment="Top" Height="32" Width="136"/>
+        <DataGrid Grid.Column="2" HorizontalAlignment="Left" Height="2" Margin="86,45,0,0" Grid.Row="3" VerticalAlignment="Top" Width="15"/>
+        <TextBox x:Name="txtFinalMark" Grid.Column="5" HorizontalAlignment="Left" Height="30" Margin="17.2,17.4,0,0" Grid.Row="6"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnBack"  HorizontalAlignment="Left" Margin="0,73.4,0,0" VerticalAlignment="Top" Width="84" Click="btnBack_Click" Height="29" Foreground="White" Grid.Row="8" >
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/prevWindows.jpg"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+
+</Window>
